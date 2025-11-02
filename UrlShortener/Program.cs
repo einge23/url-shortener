@@ -7,7 +7,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var generatorIdStr = Environment.GetEnvironmentVariable("ID_GENERATOR_ID");
+var generatorIdStr = builder.Configuration["ID_GENERATOR_ID"];
 var generatorId = 0;
 
 if (string.IsNullOrEmpty(generatorIdStr))
@@ -21,7 +21,7 @@ else if (!int.TryParse(generatorIdStr, out generatorId))
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    var cs = Environment.GetEnvironmentVariable("CONNECTION_STRING");
+    var cs = builder.Configuration.GetConnectionString("CONNECTION_STRING");
     options.UseMySql(cs, ServerVersion.AutoDetect(cs));
 });
 
