@@ -39,7 +39,7 @@ public class DataController : ControllerBase
         {
             var id = _idGenerator.CreateId();
             var encodedId = Base62Encoder.Encode(id);
-            var shortUrl = $"https://shorty-url.up.railway.app{encodedId}";
+            var shortUrl = $"https://shorty-url.up.railway.app/{encodedId}";
             var url = new Url
             {
                 Id = id,
