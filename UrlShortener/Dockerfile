@@ -4,12 +4,10 @@
     FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
     WORKDIR /src
     
-    # Copy csproj first for better caching
-    # Assuming your project file is Converse.API.csproj at repo root (current context)
     COPY *.csproj ./
     
     # Restore dependencies
-    RUN dotnet restore ./Converse.API.csproj
+    RUN dotnet restore ./UrlShortener.csproj
     
     # Copy the rest of the source
     COPY . .
