@@ -1,4 +1,4 @@
 [build]
 builder = "dockerfile"
-dockerfilePath = "Converse.API/Dockerfile"
+dockerfilePath = "UrlShortener/Dockerfile"
 context = "."
