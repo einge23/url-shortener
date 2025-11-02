@@ -15,7 +15,8 @@ if (string.IsNullOrEmpty(replicaIdString))
 }
 else 
 {
-    replicaId = replicaIdString.GetHashCode();
+    Console.WriteLine($"RAILWAY_REPLICA_ID: {replicaIdString}");
+    replicaId = replicaIdString.GetHashCode() % 1024;
 }
 
 builder.Services.AddDbContext<AppDbContext>(options =>
