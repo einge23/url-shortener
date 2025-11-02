@@ -28,7 +28,7 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>  
         {
-            policy.WithOrigins("http://localhost:5173")
+            policy.WithOrigins("http://localhost:5173", "https://shorty-url-production.up.railway.app/")
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials();
