@@ -1,0 +1,4 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "Converse.API/Dockerfile"
+context = "."

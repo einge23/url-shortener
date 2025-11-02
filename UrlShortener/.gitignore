@@ -1,0 +1,91 @@
+# Build artifacts
+bin/
+obj/
+out/
+artifacts/
+
+# .NET user-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS / VS Code
+.vs/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Rider / JetBrains
+.idea/
+*.iml
+
+# NuGet
+# (keep packages/ ignored if you ever use packages.config; modern projects restore to global cache)
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+
+# Logs
+*.log
+logs/
+TestResult*/
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Publish profiles (XML often contains secrets)
+Properties/PublishProfiles/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+secrets.json
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+appsettings.json
+
+# If you use dotnet user-secrets, the actual store is outside the repo,
+# but ignore any accidental export files
+secretstore/
+
+# Certificate files
+*.pfx
+*.p12
+*.cer
+*.key
+*.pem
+
+# Generated files
+Generated/*
+wwwroot/dist/
+wwwroot/*.map
+
+# Temporary files
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+docker-compose.local.yml
+.docker/
+**/*.pid
+
+# Coverage tools
+coverage/
+coverage-results/
+.coverage/
+.coverlet/
+.lcov
+lcov.info
+
