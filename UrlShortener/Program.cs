@@ -7,16 +7,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var generatorIdStr = builder.Configuration["ID_GENERATOR_ID"];
-var generatorId = 0;
-
-if (string.IsNullOrEmpty(generatorIdStr))
+var replicaIdString = builder.Configuration["RAILWAY_REPLICA_ID"];
+var replicaId = 0;
+if (string.IsNullOrEmpty(replicaIdString))
 {
-    throw new Exception("ID_GENERATOR_ID not set");
+    throw new Exception("RAILWAY_REPLICA_ID not set");
 }
-else if (!int.TryParse(generatorIdStr, out generatorId))
+else 
 {
-    throw new Exception($"Invalid ID_GENERATOR_ID value '{generatorIdStr}'");
+    replicaId = replicaIdString.GetHashCode();
 }
 
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -37,7 +36,7 @@ builder.Services.AddCors(options =>
     );
 });
 
-builder.Services.AddIdGen(generatorId);
+builder.Services.AddIdGen(replicaId);
 
 
 var app = builder.Build();
