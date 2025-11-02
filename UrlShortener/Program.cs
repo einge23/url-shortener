@@ -15,7 +15,6 @@ if (string.IsNullOrEmpty(replicaIdString))
 }
 else 
 {
-    Console.WriteLine($"RAILWAY_REPLICA_ID: {replicaIdString}");
     replicaId = replicaIdString.GetHashCode() % 1024;
 }
 
